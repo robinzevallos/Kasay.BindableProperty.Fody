@@ -1,0 +1,1 @@
+# Kasay.BindableProperty.Fody
