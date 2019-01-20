@@ -3,13 +3,13 @@
     using System;
     using Xamarin.Forms;
 
-    public class ExpectedControl : ContentView
+    public class BeforeControl : ContentView
     {
         public static readonly BindableProperty SomeNameProperty =
            BindableProperty.Create(
                "SomeName",
                typeof(String),
-               typeof(ExpectedControl));
+               typeof(BeforeControl));
 
         public String SomeName
         {
@@ -21,7 +21,7 @@
           BindableProperty.Create(
               "SomeNumber", 
               typeof(Int32), 
-              typeof(ExpectedControl));
+              typeof(BeforeControl));
 
         public Int32 SomeNumber
         {
@@ -33,7 +33,7 @@
           BindableProperty.Create(
               "SomeCondition", 
               typeof(Boolean), 
-              typeof(ExpectedControl));
+              typeof(BeforeControl));
 
         public Boolean SomeCondition
         {
@@ -41,7 +41,7 @@
             set => SetValue(SomeConditionProperty, value);
         }
 
-        public ExpectedControl()
+        public BeforeControl()
         {
             Content.BindingContext = this;
         }

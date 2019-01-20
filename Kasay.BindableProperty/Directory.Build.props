@@ -3,13 +3,13 @@
   <PropertyGroup>
     <Authors>Robin Zevallos</Authors>
     <Description>Auto BindableProperty in Xamarin.Forms with Fody.</Description>
-    <PackageTags>ILWeaving, Fody, Cecil, Xamarin.Forms, Binding, BindableProperty</PackageTags>
+    <PackageTags>ILWeaving, Fody, Cecil, Xamarin.Forms, Binding, BindableProperty, Auto</PackageTags>
     <Version>1.0.0</Version>
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageIconUrl>https://raw.githubusercontent.com/robinzevallos/Kasay.DependencyProperty.WPF.Fody/master/kasay_icon.png</PackageIconUrl>
-    <PackageProjectUrl>https://github.com/robinzevallos/Kasay.DependencyProperty.WPF.Fody</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/robinzevallos/Kasay.BindableProperty.Fody/master/kasay_icon.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/robinzevallos/Kasay.BindableProperty.Fody</PackageProjectUrl>
   </PropertyGroup>
   
   <PropertyGroup>

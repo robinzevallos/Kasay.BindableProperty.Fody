@@ -22,12 +22,12 @@ internal class ConstructorImplementer
         moduleDefinition = typeDefinition.Module;
 
         if (!isModeTest)
-            EqualDataContext();
+            EqualBindingContext();
 
         AddStaticConstructor();
     }
 
-    void EqualDataContext()
+    void EqualBindingContext()
     {
         var method = typeDefinition.GetConstructors().First();
 

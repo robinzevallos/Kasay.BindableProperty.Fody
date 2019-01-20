@@ -5,7 +5,7 @@
     using Xamarin.Forms;
 
     [AutoBindableProperty]
-    public class SomeControl : ContentView
+    public class AfterControl : ContentView
     {
         public String SomeName { get; set; }
 
