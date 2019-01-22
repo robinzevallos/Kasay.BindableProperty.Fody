@@ -1,4 +1,5 @@
-﻿using Mono.Cecil;
+﻿using Kasay.FodyHelpers;
+using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Mono.Cecil.Rocks;
 using System;
@@ -14,14 +15,14 @@ internal class ConstructorImplementer
     public ConstructorImplementer(
         AssemblyFactory xamarinAssembly,
         TypeDefinition typeDefinition,
-        Boolean isModeTest)
+        Boolean isTest)
     {
         this.xamarinAssembly = xamarinAssembly;
         this.typeDefinition = typeDefinition;
 
         moduleDefinition = typeDefinition.Module;
 
-        if (!isModeTest)
+        if (!isTest)
             EqualBindingContext();
 
         AddStaticConstructor();

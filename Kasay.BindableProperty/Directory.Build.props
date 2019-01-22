@@ -4,7 +4,7 @@
     <Authors>Robin Zevallos</Authors>
     <Description>Auto BindableProperty in Xamarin.Forms with Fody.</Description>
     <PackageTags>ILWeaving, Fody, Cecil, Xamarin.Forms, Binding, BindableProperty, Auto</PackageTags>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup>

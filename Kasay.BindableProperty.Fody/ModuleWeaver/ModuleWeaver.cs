@@ -1,23 +1,14 @@
 ﻿using Fody;
+using Kasay.FodyHelpers;
 using Mono.Cecil;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class ModuleWeaver : BaseModuleWeaver
 {
-    readonly Boolean isModeTest;
-
     AssemblyFactory xamarinAssembly;
 
-    public ModuleWeaver()
-    {
-    }
-
-    public ModuleWeaver(Boolean isModeTest) : this()
-    {
-        this.isModeTest = isModeTest;
-    }
+    public Boolean IsTest { get; set; }
 
     public override void Execute()
     {
@@ -33,17 +24,15 @@ public class ModuleWeaver : BaseModuleWeaver
     void SetDependencyPropertyToTypes()
     {
         foreach (var type in ModuleDefinition.GetTypes())
-        {
-            var isTargetType = type.CustomAttributes
-                .Any(_ => _.AttributeType.Name == "AutoBindablePropertyAttribute");
-
-            if (isTargetType)
+        {         
+            if (type.InheritFrom("Xamarin.Forms.BindableObject"))
             {
-                new ConstructorImplementer(xamarinAssembly, type, isModeTest);
+                new ConstructorImplementer(xamarinAssembly, type, IsTest);
 
                 foreach (var prop in type.Properties)
                 {
-                    new DependencyPropertyFactory(xamarinAssembly,  prop);
+                    if (prop.ExistAttribute("BindAttribute"))
+                        new DependencyPropertyFactory(xamarinAssembly,  prop);
                 }
             }
         }

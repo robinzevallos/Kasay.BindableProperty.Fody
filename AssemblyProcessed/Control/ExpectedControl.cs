@@ -1,15 +1,15 @@
-﻿namespace AssemblyToProcess
+﻿namespace AssemblyProcessed
 {
     using System;
     using Xamarin.Forms;
 
-    public class BeforeControl : ContentView
+    public class ExpectedControl : ContentView
     {
         public static readonly BindableProperty SomeNameProperty =
            BindableProperty.Create(
-               "SomeName",
+               "SomeName", 
                typeof(String),
-               typeof(BeforeControl));
+               typeof(ExpectedControl));
 
         public String SomeName
         {
@@ -20,8 +20,8 @@
         public static readonly BindableProperty SomeNumberProperty =
           BindableProperty.Create(
               "SomeNumber", 
-              typeof(Int32), 
-              typeof(BeforeControl));
+              typeof(Int32),
+              typeof(ExpectedControl));
 
         public Int32 SomeNumber
         {
@@ -33,7 +33,7 @@
           BindableProperty.Create(
               "SomeCondition", 
               typeof(Boolean), 
-              typeof(BeforeControl));
+              typeof(ExpectedControl));
 
         public Boolean SomeCondition
         {
@@ -41,9 +41,9 @@
             set => SetValue(SomeConditionProperty, value);
         }
 
-        public BeforeControl()
+        public ExpectedControl()
         {
-            Content.BindingContext = this;
+            BindingContext = this;
         }
     }
 }
