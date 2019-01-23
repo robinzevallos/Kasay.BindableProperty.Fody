@@ -90,6 +90,6 @@ public class DemoControl : UserControl
   }
 }
 ```
-The implementation of BindableProperty in the generation of custom controls in Xamarin.Forms always leaves us with reduntant and repetitive code, but all this can be avoided using the Bind attribute of [Kasay.BindableProperty.Fody.](https://www.nuget.org/packages/Kasay.BindableProperty.Fody/):
+The implementation of BindableProperty in the generation of custom controls in Xamarin.Forms always leaves us with reduntant and repetitive code, but all this can be avoided using the Bind attribute of [Kasay.BindableProperty.Fody](https://www.nuget.org/packages/Kasay.BindableProperty.Fody/).
 
 ### [Sample](https://github.com/robinzevallos/Sample.BindableProperty)
