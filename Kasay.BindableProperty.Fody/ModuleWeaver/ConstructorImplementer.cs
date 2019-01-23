@@ -12,19 +12,14 @@ internal class ConstructorImplementer
 
     ModuleDefinition moduleDefinition;
 
-    public ConstructorImplementer(
-        AssemblyFactory xamarinAssembly,
-        TypeDefinition typeDefinition,
-        Boolean isTest)
+    public ConstructorImplementer(AssemblyFactory xamarinAssembly, TypeDefinition typeDefinition)
     {
         this.xamarinAssembly = xamarinAssembly;
         this.typeDefinition = typeDefinition;
 
         moduleDefinition = typeDefinition.Module;
 
-        if (!isTest)
-            EqualBindingContext();
-
+        EqualBindingContext();
         AddStaticConstructor();
     }
 
@@ -32,7 +27,6 @@ internal class ConstructorImplementer
     {
         var method = typeDefinition.GetConstructors().First();
 
-        var callGet_Content = xamarinAssembly.GetMethodReference("Xamarin.Forms.ContentView", "get_Content");
         var callPut_BindingContext = xamarinAssembly.GetMethodReference("Xamarin.Forms.BindableObject", "set_BindingContext");
 
         method.Body.Instructions.RemoveAt(method.Body.Instructions.Count - 1);
@@ -40,9 +34,8 @@ internal class ConstructorImplementer
         var processor = method.Body.GetILProcessor();
         processor.Emit(OpCodes.Nop);
         processor.Emit(OpCodes.Ldarg_0);
-        processor.Emit(OpCodes.Call, callGet_Content);
         processor.Emit(OpCodes.Ldarg_0);
-        processor.Emit(OpCodes.Callvirt, callPut_BindingContext);
+        processor.Emit(OpCodes.Call, callPut_BindingContext);
         processor.Emit(OpCodes.Nop);
         processor.Emit(OpCodes.Ret);
     }
