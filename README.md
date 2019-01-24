@@ -1,4 +1,5 @@
-[![NuGet Status](http://img.shields.io/nuget/v/PropertyChanged.Fody.svg?style=flat&max-age=86400)](https://www.nuget.org/packages/Kasay.BindableProperty.Fody/)
+[![NuGet Status](http://img.shields.io/nuget/v/Kasay.BindableProperty.Fody.svg?style=flat&max-age=86400)](https://www.nuget.org/packages/Kasay.BindableProperty.Fody/)
+(https://img.shields.io/nuget/v/ICSharpCode.Decompiler.svg)](https://nuget.org/packages/ICSharpCode.Decompiler) [![Build status]
 
 ![Icon](https://raw.githubusercontent.com/robinzevallos/Kasay.BindableProperty.Fody/master/kasay_icon.png)
 
